@@ -53,7 +53,7 @@ def car(id):
 	conn = mysql.connect()
 	cursor = conn.cursor(pymysql.cursors.DictCursor)
 	try:
-		cursor.execute("SELECT car_id id, car_destination destination, car_schedule schedule, car_position position FROM tbl_carr WHERE user_id=%s", id)
+		cursor.execute("SELECT car_id id, car_destination destination, car_schedule schedule, car_position position FROM tbl_car WHERE user_id=%s", id)
 		row = cursor.fetchone()
 		resp = jsonify(row)
 		resp.status_code = 200
